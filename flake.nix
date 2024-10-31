@@ -11,7 +11,7 @@
       systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
       perSystem = { pkgs, ... }: let 
         pythonEnv = pkgs.python3.withPackages (python-pkgs: with python-pkgs; [
-          flask
+          django
           jinja2
         ]);
       in {
@@ -33,7 +33,7 @@
             ];
 
             text = ''
-              flask --app main run --debug
+              
             '';
           };
         in  {
